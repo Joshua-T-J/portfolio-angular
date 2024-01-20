@@ -1,0 +1,126 @@
+<section id="contact_form">
+    <div class="container" data-cues="slideInUp">
+        <h6>CONTACT</h6>
+        <h1>CONTACT WITH ME</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-5 address">
+                <h4>Reach Me</h4>
+                <p class="reach-me">
+                    Just fill the form to start a discussion with me on how we can
+                    work together. <br />
+                    <br />
+                    Don't want to fill the form? you can just e-mail me.
+                </p>
+                <p class="reach-me">
+                    <a href="tel:+918921233481"><span><i class="fas fa-mobile-alt"></i></span> +91
+                        8921233481</a>
+                </p>
+                <p class="reach-me">
+                    <a href="mailto:joshuajose312@gmail.com"><span><i class="far fa-envelope"></i></span>
+                        joshuajose312@gmail.com</a>
+                </p>
+                <div class="home-icon icon1">
+                    <p style="color: #5f5f5f">FIND WITH ME</p>
+                    <div class="icons social">
+                        <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Joshua-T-J"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/joshua.t_j/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+                <div class="card p-4" id="contact-div">
+                    <div class="card-body">
+                        <form id="contact-form" action="">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-name">Name :</label>
+                                            <input id="form_name" type="text" name="Name" class="form-control"
+                                                placeholder="Please enter your name *" required="required" />
+                                            <span class="error-span" id="name-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_mobile">Phone No :</label>
+                                            <input id="form_mobile" type="tel" name="Mobile" class="form-control"
+                                                placeholder="+91 888 888 8888 *" required="required" />
+                                            <span class="error-span" id="mobile-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-email">E-mail :</label>
+                                            <input id="form_email" type="email" name="Email" class="form-control"
+                                                placeholder="you@example.com *" required="required"
+                                                data-error="Valid email is required." />
+                                            <span class="error-span" id="email-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form-subject">Subject :</label>
+                                            <input id="form_subject" type="text" name="Subject" class="form-control"
+                                                placeholder="Please specify the subject *" required="required" />
+                                            <span class="error-span" id="subject-error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="form_message">Message :</label>
+                                            <textarea id="form_message" name="Message" class="form-control"
+                                                placeholder="Write your message here *" rows="4"
+                                                required="required"></textarea>
+                                            <span class="error-span" id="message-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="margin-top: 10px">
+                                        <button type="submit" class="btn btn-send pt-2 btn-block" id="submit-btn">
+                                            Send Message &nbsp;
+                                            <i class="fa-regular fa-paper-plane"></i>
+                                        </button>
+                                        <span class="error-span text-center" id="submit-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.8 -->
+            </div>
+            <!-- /.row-->
+        </div>
+    </div>
+</section>
+
+<!-- contact form submit popup -->
+
+<div class="contact-popup" id="message-popup">
+    <div class="inner-popup">
+        <h4>Message Send Successfully!<br /></h4>
+        <p>Thankyou For Your Feedback.</p>
+        <br />
+        <div class="home-icon icon1">
+            <p style="color: #5f5f5f">FOLLOW ON</p>
+            <div class="icons social">
+                <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Joshua-T-J"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/joshua.t_j/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <button id="reload">OK</button>
+    </div>
+</div>
+
+<!-- contact form loading -->
+
+<div id="loading-wrapper" class="loading">
+    <div class="loader"></div>
+</div>

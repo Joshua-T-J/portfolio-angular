@@ -1,0 +1,21 @@
+.hidden {
+  visibility: hidden;
+}
+.hidden,
+.wrap {
+  padding-right: 8px;
+  border-right: 4px solid;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    border-right: 0;
+  }
+  25%,
+  75% {
+    border-right: 4px solid;
+  }
+}
