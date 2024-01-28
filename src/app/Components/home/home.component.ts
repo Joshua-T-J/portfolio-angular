@@ -1,9 +1,31 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import {
+  transition,
+  style,
+  animate,
+  trigger,
+  query,
+  stagger,
+} from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
 
+const fadeAnimation = [
+  transition('* => *', [
+    query(
+      ':enter',
+      [
+        style({ opacity: 0 }),
+        stagger(100, [animate('0.5s', style({ opacity: 1 }))]),
+      ],
+      { optional: true }
+    ),
+    query(':leave', animate('0.5s', style({ opacity: 0 })), { optional: true }),
+  ]),
+];
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  animations: [trigger('fadeInOut', fadeAnimation)],
 })
 export class HomeComponent implements OnInit {
   toRotate: string[] = [
@@ -11,11 +33,44 @@ export class HomeComponent implements OnInit {
     'And a Photographer.',
     'I Adore Exploring New Things.',
   ];
+
+  get stateName() {
+    return this.showMore ? 'show' : 'hide';
+  }
+
+  skillsIcons: ISkillsIcons[] = [
+    { IconSrc: '../../../assets/Logos/angular.svg', Title: 'Angular' },
+    {
+      IconSrc: '../../../assets/Logos/javascript.svg',
+      Title: 'Javascript',
+    },
+    {
+      IconSrc: '../../../assets/Logos/csharp.svg',
+      Title: 'C#',
+    },
+    {
+      IconSrc: '../../../assets/Logos/html.svg',
+      Title: 'HTML5',
+    },
+    {
+      IconSrc: '../../../assets/Logos/css.svg',
+      Title: 'CSS3',
+    },
+    {
+      IconSrc: '../../../assets/Logos/typescript.svg',
+      Title: 'Typescript',
+    },
+    {
+      IconSrc: '../../../assets/Logos/react.svg',
+      Title: 'React',
+    },
+  ];
   period: number = 2000;
   txt: string = '';
   fullTxt: string = '';
   isDeleting: boolean = false;
   loopNum: number = 0;
+  showMore: boolean = false;
 
   ngOnInit(): void {
     this.tick();
@@ -50,4 +105,13 @@ export class HomeComponent implements OnInit {
       this.tick();
     }, delta);
   }
+
+  toggleMore() {
+    this.showMore = !this.showMore;
+  }
+}
+
+interface ISkillsIcons {
+  IconSrc: string;
+  Title: string;
 }

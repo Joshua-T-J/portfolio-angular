@@ -1,9 +1,9 @@
-<section class="home" id="home">
-    <div class="container">
+<section class="home">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-12 home-content">
                 <p>WELCOME TO MY WORLD</p>
-                <h1 style="text-align: left">
+                <h1>
                     Hi, I’m <span class="name">Joshua T J</span>
                 </h1>
                 <h2>
@@ -32,9 +32,16 @@
                     <div class="home-icon icon2 d-flex flex-row justify-content-between flex-wrap">
                         <div class="icons">
                             <p>BEST SKILL ON</p>
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
+                            <div class="icons-container" [@fadeInOut]="showMore ? skillsIcons.length : 4">
+                                <span
+                                    *ngFor="let item of (showMore ? skillsIcons : (skillsIcons | slice:0:4)); let i = index"
+                                    [@fadeInOut]="{value: stateName, params: {delay: i * 100}}"
+                                    [matTooltip]="item.Title">
+                                    <img [src]="item.IconSrc" [alt]="item.Title">
+                                </span>
+                                <i [matTooltip]="showMore?'Show less':'Show more'" matTooltipPosition="right"
+                                    class="fa-solid fa-plus more-icon" (click)="toggleMore()"></i>
+                            </div>
                         </div>
                     </div>
                 </div>

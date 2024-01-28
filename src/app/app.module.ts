@@ -9,6 +9,11 @@ import { ProjectsComponent } from './Components/projects/projects.component';
 import { ResumeComponent } from './Components/resume/resume.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContentfulService } from './Services/contentful.service';
+import { ProjectDetailsComponent } from './Components/projects/project-details/project-details.component';
+import { MainPageComponent } from './Components/main-page/main-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './Modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +23,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProjectsComponent,
     ResumeComponent,
     ContactComponent,
+    ProjectDetailsComponent,
+    MainPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+  ],
+  providers: [ContentfulService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

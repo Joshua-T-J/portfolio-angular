@@ -1,43 +1,19 @@
-<section class="projects" id="projects">
-    <div class="container" data-cues="slideInUp">
+<section class="projects">
+    <div class="container-fluid" data-cues="slideInUp">
         <h6>PROJECTS</h6>
-        <h1>PROJECTS DONE</h1>
+        <!-- <h1>PROJECTS DONE</h1> -->
+        <h1>What I Built</h1>
         <div class="row" data-cues="slideInUp">
-            <div class="col-md-4 card-main">
+            <div *ngFor="let item of projects" class="col-md-4 card-main">
                 <div class="cards-pro dic-card">
                     <div class="prj-img-container">
-                        <img class="img-fluid img-thumbnail" src="../assets/Images/hsu.png" alt="" />
+                        <img class="img-fluid img-thumbnail" [src]="item.fields.projectImageMain.fields.file.url"
+                            alt="" />
                     </div>
-                    <p class="prj-name">WEB-APPLICATION</p>
-                    <h5 class="card-elements projects-h5">
-                        HSU WAGE CALCULATOR&nbsp;<span id="goto"><i
+                    <p class="prj-name">{{item.fields.projectType}}</p>
+                    <h5 class="card-elements projects-h5" [routerLink]="['project-details',item.sys.id]">
+                        {{item.fields.projectTitle}}&nbsp;<span id="goto"><i
                                 class="fa-solid fa-square-arrow-up-right"></i></span>
-                    </h5>
-                    <p class="card-elements"></p>
-                </div>
-            </div>
-
-            <div class="col-md-4 card-main">
-                <div class="cards-pro ocym-card">
-                    <div class="prj-img-container">
-                        <img class="img-fluid img-thumbnail" src="../assets/Images/ocym.webp" alt="" />
-                    </div>
-                    <p class="prj-name">STATIC WEBSITE</p>
-                    <h5 class="card-elements projects-h5">
-                        OCYM WEBSITE&nbsp;<span id="goto"><i class="fa-solid fa-square-arrow-up-right"></i></span>
-                    </h5>
-                    <p class="card-elements"></p>
-                </div>
-            </div>
-
-            <div class="col-md-4 card-main">
-                <div class="cards-pro todo-card">
-                    <div class="prj-img-container">
-                        <img class="img-fluid img-thumbnail" src="../assets/Images/Todo.webp" alt="" />
-                    </div>
-                    <p class="prj-name">REACT APP</p>
-                    <h5 class="card-elements projects-h5">
-                        TODO APP&nbsp;<span id="goto"><i class="fa-solid fa-square-arrow-up-right"></i></span>
                     </h5>
                     <p class="card-elements"></p>
                 </div>
@@ -49,45 +25,9 @@
 
 <!-- project popup -->
 
-<div class="project-popup" id="popup-dic">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="image-div text-center">
-                    <img class="img-fluid" src="../assets/Images/hsu-lg.png" alt="" />
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="prj-popup-contents">
-                    <h5>Project - Web-Application</h5>
-                    <h2>HSU WAGE CALCULATOR</h2>
-                    <p>
-                        Project for calculating wages of the workers in HSU(Handloom
-                        School Uniform) Societies, Under the District Industry Center
-                        ,Kollam <br />
-                        <br />
-                        This is a Project with HTML,CSS,Javascript in Front-end and
-                        Node.js is used as the Backend Language. Database used is Mongo
-                        DB
-                    </p>
-                </div>
 
-                <div class="view-prj-btn">
-                    <a href="https://dic-project.github.io/DIC-FRONT_END/index.html">
-                        <button>
-                            View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
-                        </button>
-                    </a>
-                    <button class="close-btn">
-                        Close &nbsp;<i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="project-popup" id="popup-ocym">
+<!-- <div class="project-popup" *ngIf="popupOcym" id="popup-ocym">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -115,7 +55,7 @@
                             View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
                         </button>
                     </a>
-                    <button class="close-btn">
+                    <button class="close-btn" (click)="closePopups()">
                         Close &nbsp;<i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -124,7 +64,7 @@
     </div>
 </div>
 
-<div class="project-popup" id="popup-todo">
+<div class="project-popup" *ngIf="popupTodo" id="popup-todo">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -151,13 +91,13 @@
                             View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
                         </button>
                     </a>
-                    <button class="close-btn">
+                    <button class="close-btn" (click)="closePopups()">
                         Close &nbsp;<i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- project popup -->

@@ -1,0 +1,33 @@
+<div #project class="project-popup" id="popup-dic">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <div class="image-div text-center">
+                    <img class="img-fluid" [src]="projectDetails?.fields?.projectImages[0]?.fields?.file?.url" alt="" />
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="prj-popup-contents">
+                    <h5>Project - {{projectDetails?.fields.projectType}}</h5>
+                    <h2>{{projectDetails?.fields?.projectTitle}}</h2>
+                    <p>
+                        {{projectDetails?.fields?.projectDescription1}} <br />
+                        <br />
+                        {{projectDetails?.fields?.projectDescription2}}
+                    </p>
+                </div>
+
+                <div class="view-prj-btn">
+                    <a [href]="projectDetails?.fields?.projectUrl">
+                        <button>
+                            View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
+                        </button>
+                    </a>
+                    <button class="close-btn" routerLink="" fragment="projects">
+                        Go Home &nbsp;<i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

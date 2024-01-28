@@ -1,0 +1,94 @@
+.resume {
+  --border-width: 4px;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+.resume h5 {
+  padding-bottom: 25px;
+}
+
+.resume-card p:not(:first-child) {
+  color: var(--font-color-700);
+}
+
+.resume-card::before {
+  content: " ";
+  background: var(--clr-border-dark);
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  width: var(--border-width);
+  top: 4px;
+  height: 100%;
+  z-index: 50;
+}
+
+/* .resume-card::after {
+  position: absolute;
+  content: "";
+  width: 19px;
+  height: var(--border-width);
+  right: 97%;
+  top: 65px;
+  transform: translateY(-7px);
+  background: var(--clr-border-dark);
+  z-index: 0;
+} */
+
+.resume-card p:first-child:before {
+  transition: 500ms all ease-in-out;
+  content: " ";
+  background: var(--bg-body);
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: var(--border-width) solid var(--clr-border-dark);
+  left: -7px;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  z-index: 100;
+}
+
+.resume-card:hover p:first-child:before {
+  background-color: var(--clr-primary);
+}
+
+/* .resume-details .col-md-6:not(:first-child) {
+  padding-bottom: 20px;
+} */
+
+@media screen and (width<400px) {
+  .resume-card::before,
+  .resume-card p:first-child:before {
+    display: none;
+  }
+}
+
+@media screen and (width < 768px) {
+  .resume-details .resume-card {
+    margin-bottom: 20px;
+  }
+
+  .resume-details .col-md-6:not(:first-child) {
+    padding-top: 20px;
+  }
+}
+
+.resume-card .education-board {
+  font-size: 14px;
+}
+
+.resume-progress label {
+  width: 100%;
+  font-size: 14px;
+}
+
+.resume-progress .progress {
+  height: 5px !important;
+}
+
+.skill-progress-value {
+  float: right;
+}

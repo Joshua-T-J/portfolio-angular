@@ -14,22 +14,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto nav-joshua">
             <li class="nav-item ml-auto nav-btns">
-              <a class="nav-link" href="#home">HOME</a>
+              <a class="nav-link" routerLink="" fragment="home">HOME</a>
             </li>
             <li class="nav-item ml-auto nav-btns">
-              <a class="nav-link" href="#features">FEATURES</a>
+              <a class="nav-link" routerLink="" fragment="features">FEATURES</a>
             </li>
             <li class="nav-item ml-auto nav-btns">
-              <a class="nav-link" href="#projects">PROJECTS</a>
+              <a class="nav-link" routerLink="" fragment="projects">PROJECTS</a>
             </li>
             <li class="nav-item ml-auto nav-btns">
-              <a class="nav-link" href="#resume">RESUME</a>
+              <a class="nav-link" routerLink="" fragment="resume">RESUME</a>
             </li>
             <li class="nav-item ml-auto nav-btns">
-              <a class="nav-link" href="#contact_form">CONTACT</a>
+              <a class="nav-link" routerLink="" fragment="contact_form">CONTACT</a>
             </li>
             <li class="nav-item ml-auto nav-btns">
-              <a class="nav-link" href="#footer">FOLLOW</a>
+              <a class="nav-link" routerLink="" fragment="footer">FOLLOW</a>
             </li>
           </ul>
         </div>
@@ -39,11 +39,7 @@
 </header>
 
 <main>
-  <app-home></app-home>
-  <app-features></app-features>
-  <app-projects></app-projects>
-  <app-resume></app-resume>
-  <app-contact></app-contact>
+  <router-outlet></router-outlet>
 </main>
 
 <footer id="footer">
@@ -134,46 +130,46 @@
 
 <div class="side-bar" id="side-bar">
   <div class="social-bar flex-column justify-content-between flex-wrap" id="icon-side">
-    <div class="toggle-side" id="hide-sidebar" title="Hide">
-      <i class="fa-solid fa-angle-left"></i>
+    <div (click)="toggleSideBar()" class="toggle-side" id="show-sidebar" matTooltipPosition="right"
+      [matTooltip]="sideBarOpen?'Collapse':'Expand'">
+      <i class="fa-solid" [ngClass]="sideBarOpen?'fa-angle-left':'fa-angle-right'"></i>
     </div>
-
-    <div class="theme-switch-wrapper side-bar-icon">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" (change)="toggleTheme()" [formControl]="themeSwitch" id="checkbox" />
-        <i class="fa-solid fa-moon" title="Dark Mode" id="moon"></i>
-        <i class="fa-solid fa-sun" title="Light Mode" id="sun"></i>
-      </label>
-    </div>
-
-    <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/" title="LinkedIn">
-      <div class="side-bar-icon">
-        <i class="fa-brands fa-linkedin-in"></i>
+    <ng-container *ngIf="sideBarOpen">
+      <div class="side-icons-container">
+        <div class="theme-switch-wrapper side-bar-icon">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" (change)="toggleTheme()" [formControl]="themeSwitch" id="checkbox" />
+            <i class="fa-solid fa-moon" matTooltipPosition="right" matTooltip="Dark Mode" id="moon"></i>
+            <i class="fa-solid fa-sun" matTooltipPosition="right" matTooltip="Light Mode" id="sun"></i>
+          </label>
+        </div>
+        <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/" matTooltipPosition="right" matTooltip="LinkedIn">
+          <div class="side-bar-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+        </a>
+        <a href="https://github.com/Joshua-T-J" matTooltipPosition="right" matTooltip="GitHub">
+          <div class="side-bar-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/joshua.t_j/" matTooltipPosition="right" matTooltip="Instagram">
+          <div class="side-bar-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </a>
+        <a href="mailto:joshuajose312@gmail.com" matTooltipPosition="right" matTooltip="E-mail">
+          <div class="side-bar-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+        </a>
       </div>
-    </a>
-    <a href="https://github.com/Joshua-T-J" title="GitHub">
-      <div class="side-bar-icon">
-        <i class="fa-brands fa-github"></i>
-      </div>
-    </a>
-    <a href="https://www.instagram.com/joshua.t_j/" title="Instagram">
-      <div class="side-bar-icon">
-        <i class="fa-brands fa-instagram"></i>
-      </div>
-    </a>
-    <a href="mailto:joshuajose312@gmail.com" title="E-mail">
-      <div class="side-bar-icon">
-        <i class="fa-solid fa-envelope"></i>
-      </div>
-    </a>
-  </div>
-  <div class="toggle-side" id="show-sidebar" title="Expand">
-    <i class="fa-solid fa-angle-right"></i>
+    </ng-container>
   </div>
 </div>
 
 <!-- goto top arrow button -->
 
-<div class="up-arrow" id="goto-top" title="Go to Top">
+<div class="up-arrow" id="goto-top" matTooltip="Go to Top">
   <a href="#home" id="progress-value"><i class="fas fa-arrow-up"></i> </a>
 </div>

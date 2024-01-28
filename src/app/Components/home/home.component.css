@@ -19,3 +19,27 @@
     border-right: 4px solid;
   }
 }
+.home-icon span img {
+  aspect-ratio: 1;
+  width: 20px;
+}
+
+.home-icon span {
+  margin-inline: 10px;
+  padding: 20px 22px;
+  border-radius: 5px;
+  background: var(--background-color);
+  box-shadow: var(--shadow);
+}
+
+.home-icon .icons-container {
+  margin-top: 60px;
+}
+
+.more-icon {
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  background: none;
+  box-shadow: none;
+}
