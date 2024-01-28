@@ -48,10 +48,10 @@
                     <div class="resume-progress">
                         <p>Programming Languages & Frameworks</p>
                         <ng-container *ngFor="let item of languages">
-                            <label for="html-progress">{{item?.Title}} <span
+                            <label for="progress-bar">{{item?.Title}} <span
                                     class="skill-progress-value">{{item.Percentage}}</span></label>
                             <div class="progress" style="height: 10px">
-                                <div class="progress-bar" id="html-progress" role="progressbar"
+                                <div class="progress-bar" id="progress-bar" role="progressbar"
                                     [style.width]="item.Percentage" [attr.aria-valuenow]="item.Percentage"
                                     aria-valuemin="0" aria-valuemax="100">
 
@@ -64,10 +64,10 @@
                     <div class="resume-progress">
                         <p>Other Skills</p>
                         <ng-container *ngFor="let item of otherSkills">
-                            <label for="html-progress">{{item?.Title}}<span
+                            <label for="progress-bar">{{item?.Title}}<span
                                     class="skill-progress-value">{{item.Percentage}}</span></label>
                             <div class="progress" style="height: 10px">
-                                <div class="progress-bar" id="html-progress" role="progressbar"
+                                <div class="progress-bar" id="progress-bar" role="progressbar"
                                     [style.width]="item.Percentage" [attr.aria-valuenow]="item.Percentage"
                                     aria-valuemin="0" aria-valuemax="100">
                                 </div>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <!-- certification -->
+        <!-- experience -->
 
         <div *ngIf="activeTab === 'experience'" [@translate] class="resume-details" id="certification">
             <h5>EXPERIENCE</h5>

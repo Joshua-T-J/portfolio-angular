@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from 'src/app/Services/contentful.service';
+import { ContentfulService } from '../../Services/contentful.service';
 
 @Component({
   selector: 'app-projects',

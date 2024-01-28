@@ -1,6 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ContentfulService } from 'src/app/Services/contentful.service';
+import { ContentfulService } from '../../Services/contentful.service';
 
 const translateAnimation = [
   transition('void => *', [
