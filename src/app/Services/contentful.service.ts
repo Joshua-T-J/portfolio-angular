@@ -8,6 +8,7 @@ const CONFIG = {
   contentTypeIds: {
     project: 'projects',
     resume: 'resumeDetails',
+    projectTypes: 'projectTypes',
   },
 };
 
@@ -41,6 +42,18 @@ export class ContentfulService {
     );
   }
 
+  getProjectDetails(contentType: string): Observable<Entry<any>[]> {
+    return from(
+      this.cdaClient
+        .getEntries(
+          Object.assign({
+            content_type: contentType,
+          })
+        )
+        .then((res) => res.items)
+    );
+  }
+
   getResume(query?: object): Observable<Entry<any>[]> {
     return from(
       this.cdaClient
@@ -48,6 +61,21 @@ export class ContentfulService {
           Object.assign(
             {
               content_type: CONFIG.contentTypeIds.resume,
+            },
+            query
+          )
+        )
+        .then((res) => res.items)
+    );
+  }
+
+  getProjectTypes(query?: object): Observable<Entry<any>[]> {
+    return from(
+      this.cdaClient
+        .getEntries(
+          Object.assign(
+            {
+              content_type: CONFIG.contentTypeIds.projectTypes,
             },
             query
           )

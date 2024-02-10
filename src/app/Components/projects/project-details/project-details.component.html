@@ -1,33 +1,40 @@
-<div #project class="project-popup" id="popup-dic">
+<div *ngFor="let item of projectDetails;let i = index" #project class="project-popup" id="popup-dic">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-md-5">
                 <div class="image-div text-center">
-                    <img class="img-fluid" [src]="projectDetails?.fields?.projectImages[0]?.fields?.file?.url" alt="" />
+                    <img class="img-fluid" [src]="item?.fields?.projectImageMain?.fields?.file?.url||placeholderImage"
+                        alt="" />
                 </div>
             </div>
             <div class="col-md-7">
                 <div class="prj-popup-contents">
-                    <h5>Project - {{projectDetails?.fields.projectType}}</h5>
-                    <h2>{{projectDetails?.fields?.projectTitle}}</h2>
+                    <h5>Project - {{item?.fields.projectTypeName}}</h5>
+                    <h2>{{item?.fields?.projectName}}</h2>
                     <p>
-                        {{projectDetails?.fields?.projectDescription1}} <br />
+                        {{item?.fields?.projectDescription1}} <br />
                         <br />
-                        {{projectDetails?.fields?.projectDescription2}}
+                        {{item?.fields?.projectDescription2}}
                     </p>
                 </div>
 
                 <div class="view-prj-btn">
-                    <a [href]="projectDetails?.fields?.projectUrl">
+                    <a [href]="item?.fields?.projectUrl">
                         <button>
                             View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
                         </button>
                     </a>
-                    <button class="close-btn" routerLink="" fragment="projects">
-                        Go Home &nbsp;<i class="fa-solid fa-arrow-left"></i>
-                    </button>
+                    <!-- <button class="close-btn" routerLink="" fragment="projects">
+                        Go Back &nbsp;<i class="fa-solid fa-arrow-left"></i>
+                    </button> -->
                 </div>
             </div>
         </div>
+    </div>
+    <hr *ngIf="projectDetails.length>1 &&i!==projectDetails.length-1">
+</div>
+<div class="project-popup" *ngIf="!projectDetails||projectDetails?.length==0" id="popup-dic">
+    <div class="container-fluid">
+        <app-project-loading [show]="projectDetails?.length==0"></app-project-loading>
     </div>
 </div>

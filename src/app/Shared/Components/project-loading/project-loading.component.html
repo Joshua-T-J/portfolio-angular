@@ -1,0 +1,40 @@
+<div class="card" *ngIf="commonService.getLoading()" aria-hidden="true">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="image"></div>
+        </div>
+        <div class="content">
+            <div class="short-line-sm"></div>
+            <div class="short-line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="row">
+                <div class="col-3"><button tabindex="-1"></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" *ngIf="show">
+    <div class="row text-center" style="color: var(--font-color);">
+        <div class="col-md-12">
+            <div class="no-data-container">
+                <div class="box">
+                    <div class="animation">
+                        <div class="one spin-one"></div>
+                        <div class="two spin-two"></div>
+                        <div class="three spin-one"></div>
+                    </div>
+                    <h2>Innovation in Progress</h2>
+                    <p>Pioneering solutions are being meticulously crafted in my digital workshop.</p>
+                    <p>Brace
+                        yourself for the unveiling of cutting-edge projects!
+                    </p>
+                    <button class="go-back-button" routerLink="/" fragment="projects"> <i class="bi bi-arrow-left"></i>
+                        &nbsp;Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

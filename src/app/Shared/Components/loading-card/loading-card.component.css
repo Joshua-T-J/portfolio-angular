@@ -1,0 +1,67 @@
+.card {
+  --loading-grey: #ededed;
+  --border-radius: 10px;
+  border: transparent;
+  background-color: var(--bg-body);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: progress;
+}
+
+.image {
+  border-radius: var(--border-radius);
+  height: 200px;
+  margin-inline: 20px;
+  margin-top: 20px;
+}
+
+.image img {
+  display: block;
+  height: inherit;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1rem 20px 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.loading .image,
+.loading h4,
+.loading .description {
+  background-color: var(--bg-body);
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    var(--clr-border-dark);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+.loading h4 {
+  min-height: 1rem;
+  border-radius: 5px;
+  animation-delay: 0.05s;
+}
+
+.loading .description {
+  margin-top: 1rem;
+  min-height: 2rem;
+  border-radius: var(--border-radius);
+  animation-delay: 0.06s;
+}

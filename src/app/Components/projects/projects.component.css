@@ -1,0 +1,22 @@
+.container-fluid {
+  max-width: 1200px;
+}
+
+.projects-showMore {
+  cursor: pointer;
+  font-size: 17px;
+  padding: 15px 60px;
+  outline: none;
+  border: none;
+  color: var(--font-color);
+  background: var(--background-color);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  margin-top: 2rem;
+}
+
+.projects-showMore:hover {
+  color: #fff;
+  background: var(--clr-primary);
+}

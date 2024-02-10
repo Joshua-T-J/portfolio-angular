@@ -14,6 +14,8 @@ import { ProjectDetailsComponent } from './Components/projects/project-details/p
 import { MainPageComponent } from './Components/main-page/main-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Modules/material/material.module';
+import { LoadingCardComponent } from './Shared/Components/loading-card/loading-card.component';
+import { ProjectLoadingComponent } from './Shared/Components/project-loading/project-loading.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { MaterialModule } from './Modules/material/material.module';
     ContactComponent,
     ProjectDetailsComponent,
     MainPageComponent,
+    LoadingCardComponent,
+    ProjectLoadingComponent,
   ],
   imports: [
     BrowserModule,

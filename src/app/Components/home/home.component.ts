@@ -39,29 +39,29 @@ export class HomeComponent implements OnInit {
   }
 
   skillsIcons: ISkillsIcons[] = [
-    { IconSrc: '../../../assets/Logos/angular.svg', Title: 'Angular' },
+    { IconSrc: '../../../assets/SVGs/angular.svg', Title: 'Angular' },
     {
-      IconSrc: '../../../assets/Logos/javascript.svg',
+      IconSrc: '../../../assets/SVGs/javascript.svg',
       Title: 'Javascript',
     },
     {
-      IconSrc: '../../../assets/Logos/csharp.svg',
+      IconSrc: '../../../assets/SVGs/csharp.svg',
       Title: 'C#',
     },
     {
-      IconSrc: '../../../assets/Logos/html.svg',
+      IconSrc: '../../../assets/SVGs/html.svg',
       Title: 'HTML5',
     },
     {
-      IconSrc: '../../../assets/Logos/css.svg',
+      IconSrc: '../../../assets/SVGs/css.svg',
       Title: 'CSS3',
     },
     {
-      IconSrc: '../../../assets/Logos/typescript.svg',
+      IconSrc: '../../../assets/SVGs/typescript.svg',
       Title: 'Typescript',
     },
     {
-      IconSrc: '../../../assets/Logos/react.svg',
+      IconSrc: '../../../assets/SVGs/react.svg',
       Title: 'React',
     },
   ];

@@ -73,11 +73,6 @@ section .container-fluid {
   box-shadow: var(--shadow-small);
 }
 
-/* .top h2 {
-  color: var(--font-color);
-  line-height: 70px;
-} */
-
 .top img {
   margin-top: 15px;
 }
@@ -291,18 +286,19 @@ section .container-fluid {
   color: var(--font-color);
   /* height: 400px;
   min-height: max(95%, 500px); */
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -moz-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .cards:hover {
-  color: #e4e4e4;
-  background-color: #ec0047c4;
+  /* color: ; */
+  /* background-color: #ec0047c4; */
+  background-image: var(--cards-hover-bg);
 }
 
-.card-elements {
+.features .card-elements {
   padding: 10px;
 }
 
@@ -335,27 +331,37 @@ section .container-fluid {
 }
 
 .cards-pro {
-  padding: 20px 0 10px 0;
+  padding: 25px;
   text-align: center;
   margin-top: 50px;
-  border-radius: 10px;
   background: var(--background-color);
   box-shadow: var(--shadow);
   cursor: pointer;
+  border-radius: 20px;
+  max-width: max-content;
 }
 
 .prj-img-container {
   overflow: hidden;
+  margin-inline: auto;
+  width: fit-content;
+  border-radius: 10px;
 }
 
 .cards-pro img {
-  padding: 10px;
   transition: all 0.3s ease-in;
+  max-width: 100%;
+}
+
+@media screen and (width<=768px) {
+  .cards-pro {
+    margin-inline: auto;
+    width: auto;
+  }
 }
 
 .cards-pro:hover img {
-  /* transform: translate(0, -4px); */
-  transform: scale3d(1.02, 1.02, 1.1);
+  transform: scale(1.1);
 }
 
 #projects a {
@@ -369,19 +375,22 @@ section .container-fluid {
   padding-top: 10px;
 }
 
+.cards-pro h5 {
+  margin-left: 20px;
+}
+
 .cards-pro h5:hover {
   color: var(--clr-primary);
   transform: scale(1);
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
+  transition: all 0.2s linear;
+  margin-left: 0;
 }
 
 .cards-pro #goto {
   opacity: 0;
   font-size: 18px;
   color: var(--clr-primary);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in;
 }
 
 .cards-pro h5:hover #goto {
@@ -789,6 +798,7 @@ footer {
   font-size: 1.2rem;
   color: #ff014da4;
   text-align: start;
+  padding: 0px;
   font-weight: 500;
 }
 

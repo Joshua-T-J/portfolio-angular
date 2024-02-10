@@ -1,22 +1,38 @@
 <section class="projects">
-    <div class="container-fluid" data-cues="slideInUp">
+    <div class="container-fluid">
         <h6>PROJECTS</h6>
         <!-- <h1>PROJECTS DONE</h1> -->
         <h1>What I Built</h1>
-        <div class="row" data-cues="slideInUp">
-            <div *ngFor="let item of projects" class="col-md-4 card-main">
-                <div class="cards-pro dic-card">
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of [1,2,3]">
+                <app-loading-card></app-loading-card>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let item of (showMore ? projects : (projects | slice:0:3))"
+                class="col-lg-4 col-md-6 card-main">
+                <div [routerLink]="['project-details',item.fields.projectId]" class="cards-pro dic-card">
                     <div class="prj-img-container">
-                        <img class="img-fluid img-thumbnail" [src]="item.fields.projectImageMain.fields.file.url"
-                            alt="" />
+                        <img [src]="item.fields.image.fields.file.url" alt="" />
                     </div>
                     <p class="prj-name">{{item.fields.projectType}}</p>
-                    <h5 class="card-elements projects-h5" [routerLink]="['project-details',item.sys.id]">
-                        {{item.fields.projectTitle}}&nbsp;<span id="goto"><i
-                                class="fa-solid fa-square-arrow-up-right"></i></span>
+                    <h5 class="card-elements projects-h5">
+                        {{item.fields.description}}&nbsp;
+                        <span id="goto">
+                            <!-- <i class="fa-solid fa-square-arrow-up-right"></i> -->
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
                     </h5>
                     <p class="card-elements"></p>
                 </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <button [disabled]="commonService.getLoading()" (click)="toggleMore()" class="projects-showMore">
+                    Show {{showMore?'Less':'More'}} <i class="bi"
+                        [ngClass]="showMore?'bi-chevron-up':'bi-chevron-down'"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -24,8 +40,6 @@
 
 
 <!-- project popup -->
-
-
 
 <!-- <div class="project-popup" *ngIf="popupOcym" id="popup-ocym">
     <div class="container">

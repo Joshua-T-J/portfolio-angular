@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "bootstrap-icons": "^1.11.3",
     "contentful": "^10.6.16",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
