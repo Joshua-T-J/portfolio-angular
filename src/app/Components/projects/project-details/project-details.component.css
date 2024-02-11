@@ -1,3 +1,7 @@
 .image-div img {
   object-fit: cover;
 }
+
+.prj-popup-contents h2 {
+  letter-spacing: 4px;
+}

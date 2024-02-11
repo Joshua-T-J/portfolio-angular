@@ -12,7 +12,6 @@ export class AppComponent {
   title = 'Portfolio';
   sideBarOpen: boolean = false;
   themeSwitch = new FormControl(false);
-  currentYear = new Date().getFullYear();
 
   constructor(
     @Inject(DOCUMENT) private document: Document,

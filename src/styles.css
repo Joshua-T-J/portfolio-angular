@@ -2,6 +2,7 @@
 
 :root {
   --bg-body: #ecf0f3;
+  --bg-body-800:rgba(236, 244, 255, 0.808)
   --background-color: linear-gradient(145deg, #e2e8ec, #fff);
   --shadow: 5px 5px 15px #d1d9e6, -5px -5px 15px #fff;
   --input-bg: #fff;
@@ -21,6 +22,7 @@
 
 [data-theme="dark"] {
   --bg-body: #212428;
+  --bg-body-800:rgba(33, 36, 40, 0.8705882353);
   --background-color: linear-gradient(145deg, #1e2024, #23272b);
   --shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
   --input-bg: #191b1e;
@@ -47,7 +49,7 @@
 
 header {
   position: fixed;
-  background-color: var(--bg-body);
+  /* background-color: var(--bg-body); */
   width: 100%;
   z-index: 900;
   top: 0;
@@ -765,7 +767,7 @@ textarea + .error-span i {
 /* message sent success popup style End*/
 footer {
   text-align: center;
-  padding: 4.5rem 0 3rem 0;
+  padding: 4.5rem 0 1rem 0;
   background-color: var(--clr-footer);
   color: var(--font-color);
 }
@@ -871,7 +873,7 @@ footer {
   border-radius: 10px;
   box-shadow: var(--shadow-small);
   z-index: 500;
-  display: none;
+  /* display: none; */
 }
 
 .side-bar-icon {
@@ -1031,4 +1033,5 @@ footer {
 hr {
   background: var(--clr-border-dark-500);
   margin-block: 30px;
+  width: 100%;
 }

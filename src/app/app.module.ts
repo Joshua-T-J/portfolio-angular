@@ -17,6 +17,8 @@ import { MaterialModule } from './Modules/material/material.module';
 import { LoadingCardComponent } from './Shared/Components/loading-card/loading-card.component';
 import { ProjectLoadingComponent } from './Shared/Components/project-loading/project-loading.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './Components/header/header.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     MainPageComponent,
     LoadingCardComponent,
     ProjectLoadingComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
