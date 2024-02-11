@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Modules/material/material.module';
 import { LoadingCardComponent } from './Shared/Components/loading-card/loading-card.component';
 import { ProjectLoadingComponent } from './Shared/Components/project-loading/project-loading.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProjectLoadingComponent } from './Shared/Components/project-loading/pro
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [ContentfulService],
   bootstrap: [AppComponent],

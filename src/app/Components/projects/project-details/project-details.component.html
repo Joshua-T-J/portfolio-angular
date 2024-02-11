@@ -1,40 +1,40 @@
-<div *ngFor="let item of projectDetails;let i = index" #project class="project-popup" id="popup-dic">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-5">
-                <div class="image-div text-center">
-                    <img class="img-fluid" [src]="item?.fields?.projectImageMain?.fields?.file?.url||placeholderImage"
-                        alt="" />
+<section>
+    <div *ngFor="let item of projectDetails;let i = index" #project class="project-popup">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-5 col-md-6">
+                    <div class="image-div text-center">
+                        <img class="img-fluid"
+                            [src]="item?.fields?.projectImageMain?.fields?.file?.url||placeholderImage" alt="" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-7">
-                <div class="prj-popup-contents">
-                    <h5>Project - {{item?.fields.projectTypeName}}</h5>
-                    <h2>{{item?.fields?.projectName}}</h2>
-                    <p>
-                        {{item?.fields?.projectDescription1}} <br />
-                        <br />
-                        {{item?.fields?.projectDescription2}}
-                    </p>
-                </div>
+                <div class="col-lg-7 col-md-6">
+                    <div class="prj-popup-contents">
+                        <h5>Project - {{item?.fields.projectTypeName}}</h5>
+                        <h2>{{item?.fields?.projectName}}</h2>
+                        <p>
+                            {{item?.fields?.projectDescription1}} <br />
+                            <br />
+                            {{item?.fields?.projectDescription2}}
+                        </p>
+                    </div>
 
-                <div class="view-prj-btn">
-                    <a [href]="item?.fields?.projectUrl">
-                        <button>
+                    <div class="view-prj-btn">
+                        <a [href]="item?.fields?.projectUrl">
                             View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
-                        </button>
-                    </a>
-                    <!-- <button class="close-btn" routerLink="" fragment="projects">
-                        Go Back &nbsp;<i class="fa-solid fa-arrow-left"></i>
-                    </button> -->
+                        </a>
+                        <!-- <button class="close-btn" routerLink="" fragment="projects">
+                            Go Back &nbsp;<i class="fa-solid fa-arrow-left"></i>
+                        </button> -->
+                    </div>
                 </div>
             </div>
         </div>
+        <hr *ngIf="projectDetails.length>1 &&i!==projectDetails.length-1">
     </div>
-    <hr *ngIf="projectDetails.length>1 &&i!==projectDetails.length-1">
-</div>
-<div class="project-popup" *ngIf="!projectDetails||projectDetails?.length==0" id="popup-dic">
-    <div class="container-fluid">
-        <app-project-loading [show]="projectDetails?.length==0"></app-project-loading>
+    <div class="project-popup" *ngIf="!projectDetails||projectDetails?.length==0">
+        <div class="container-fluid">
+            <app-project-loading [show]="projectDetails?.length==0"></app-project-loading>
+        </div>
     </div>
-</div>
+</section>

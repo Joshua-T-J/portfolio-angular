@@ -37,13 +37,15 @@ export class AppComponent {
     const scrolled = (winScroll / height) * 100;
 
     const scrollBtn = document.getElementById('goto-top');
+    const sideBar = document.getElementById('side-bar');
     if (scrollBtn) {
       scrollBtn.style.setProperty('--scroll', `${scrolled}%`);
-
-      if (winScroll > 50) {
+      if (winScroll > 400) {
         scrollBtn.style.display = 'grid';
+        sideBar ? (sideBar.style.display = 'block') : '';
       } else {
         scrollBtn.style.display = 'none';
+        sideBar ? (sideBar.style.display = 'none') : '';
       }
     }
   }
@@ -60,6 +62,10 @@ export class AppComponent {
       block: 'start',
       inline: 'nearest',
     });
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 
   toggleTheme() {
