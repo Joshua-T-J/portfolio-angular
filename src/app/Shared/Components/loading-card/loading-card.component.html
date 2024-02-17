@@ -1,4 +1,5 @@
-<div *ngIf="commonService.getLoading()" aria-hidden="true">
+@if (commonService.getLoading()) {
+<div aria-hidden="true">
     <div class="card loading">
         <div class="image">
         </div>
@@ -9,3 +10,4 @@
         </div>
     </div>
 </div>
+}

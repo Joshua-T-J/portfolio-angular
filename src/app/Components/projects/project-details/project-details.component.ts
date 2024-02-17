@@ -3,11 +3,19 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { CommonService } from 'src/app/Services/common.service';
 import { ContentfulService } from 'src/app/Services/contentful.service';
+import { ProjectLoadingComponent } from '../../../Shared/Components/project-loading/project-loading.component';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-project-details',
-  templateUrl: './project-details.component.html',
-  styleUrls: ['./project-details.component.css'],
+    selector: 'app-project-details',
+    templateUrl: './project-details.component.html',
+    styleUrls: ['./project-details.component.css'],
+    standalone: true,
+    imports: [
+        NgFor,
+        NgIf,
+        ProjectLoadingComponent,
+    ],
 })
 export class ProjectDetailsComponent {
   placeholderImage = '../../assets/Images/Placeholder Image.png';

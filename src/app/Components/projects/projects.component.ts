@@ -1,11 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../../Services/contentful.service';
 import { CommonService } from 'src/app/Services/common.service';
+import { RouterLink } from '@angular/router';
+import { LoadingCardComponent } from '../../Shared/Components/loading-card/loading-card.component';
+import { NgFor, NgClass, SlicePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css'],
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.css'],
+    standalone: true,
+    imports: [
+        NgFor,
+        LoadingCardComponent,
+        RouterLink,
+        NgClass,
+        SlicePipe,
+    ],
 })
 export class ProjectsComponent implements OnInit {
   projects: any[] = [];

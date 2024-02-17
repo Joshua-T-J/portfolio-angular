@@ -33,12 +33,13 @@
                         <div class="icons">
                             <p>BEST SKILL ON</p>
                             <div class="icons-container" [@fadeInOut]="showMore ? skillsIcons.length : 4">
-                                <span
-                                    *ngFor="let item of (showMore ? skillsIcons : (skillsIcons | slice:0:4)); let i = index"
-                                    [@fadeInOut]="{value: stateName, params: {delay: i * 100}}"
+                                @for (item of (showMore ? skillsIcons : (skillsIcons | slice:0:4)); track
+                                skillsIcons;let i= $index) {
+                                <span [@fadeInOut]="{value: stateName, params: {delay: i * 100}}"
                                     [matTooltip]="item.Title">
                                     <img [src]="item.IconSrc" [alt]="item.Title">
                                 </span>
+                                }
                                 <i [matTooltip]="showMore?'Show less':'Show more'" matTooltipPosition="right"
                                     class="fa-solid fa-plus more-icon" (click)="toggleMore()"></i>
                             </div>

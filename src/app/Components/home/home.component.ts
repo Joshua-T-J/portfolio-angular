@@ -7,6 +7,8 @@ import {
   stagger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgIf, NgFor, SlicePipe } from '@angular/common';
 
 const fadeAnimation = [
   transition('* => *', [
@@ -22,10 +24,17 @@ const fadeAnimation = [
   ]),
 ];
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
-  animations: [trigger('fadeInOut', fadeAnimation)],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    animations: [trigger('fadeInOut', fadeAnimation)],
+    standalone: true,
+    imports: [
+        NgIf,
+        NgFor,
+        MatTooltipModule,
+        SlicePipe,
+    ],
 })
 export class HomeComponent implements OnInit {
   toRotate: string[] = [

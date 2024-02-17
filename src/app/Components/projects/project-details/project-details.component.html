@@ -1,5 +1,6 @@
 <section>
-    <div *ngFor="let item of projectDetails;let i = index" #project class="project-popup">
+    @for (item of projectDetails;track projectDetails ;let i = $index) {
+    <div #project class="project-popup">
         <div class="container-fluid">
             <div class="row ">
                 <div class="col-lg-5 col-md-6">
@@ -30,11 +31,16 @@
                 </div>
             </div>
         </div>
-        <hr *ngIf="projectDetails.length>1 &&i!==projectDetails.length-1">
+        @if (projectDetails.length>1 &&i!==projectDetails.length-1) {
+        <hr>
+        }
     </div>
-    <div class="project-popup" *ngIf="!projectDetails||projectDetails?.length==0">
+    }
+    @if (!projectDetails||projectDetails?.length==0) {
+    <div class="project-popup">
         <div class="container-fluid">
             <app-project-loading [show]="projectDetails?.length==0"></app-project-loading>
         </div>
     </div>
+    }
 </section>

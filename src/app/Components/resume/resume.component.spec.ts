@@ -8,8 +8,8 @@ describe('ResumeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ResumeComponent]
-    });
+    imports: [ResumeComponent]
+});
     fixture = TestBed.createComponent(ResumeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

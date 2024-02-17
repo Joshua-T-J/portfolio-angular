@@ -1,6 +1,7 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ContentfulService } from '../../Services/contentful.service';
+import { NgIf, NgFor } from '@angular/common';
 
 const translateAnimation = [
   transition('void => *', [
@@ -20,10 +21,12 @@ const translateAnimation = [
 ];
 
 @Component({
-  selector: 'app-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.css'],
-  animations: [trigger('translate', translateAnimation)],
+    selector: 'app-resume',
+    templateUrl: './resume.component.html',
+    styleUrls: ['./resume.component.css'],
+    animations: [trigger('translate', translateAnimation)],
+    standalone: true,
+    imports: [NgIf, NgFor],
 })
 export class ResumeComponent implements OnInit {
   @ViewChild('resumeButtons') resumeButtons!: ElementRef;

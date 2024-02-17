@@ -23,11 +23,12 @@
 
 
         <!-- resume educational qualification details -->
-
-        <div *ngIf="activeTab === 'education'" [@translate] class="resume-details" id="education">
+        @if (activeTab === 'education') {
+        <div [@translate] class="resume-details" id="education">
             <h5>EDUCATIONAL QUALIFICATION</h5>
             <div class="row">
-                <div class="col-md-6 py-2" *ngFor="let item of education?.fields.resumeDetails">
+                @for (item of education?.fields.resumeDetails; track education?.fields.resumeDetail) {
+                <div class="col-md-6 py-2">
                     <div class="resume-card">
                         <p class="education-title">{{item?.Title}}</p>
                         <p class="education-board">{{item?.Board}}</p>
@@ -36,54 +37,56 @@
                         <p>{{item?.Quote}}</p>
                     </div>
                 </div>
+                }
             </div>
         </div>
-
+        }
         <!-- resume Professional skills details -->
-
-        <div *ngIf="activeTab === 'skills'" [@translate] class="resume-details education" id="skills">
+        @if (activeTab === 'skills') {
+        <div [@translate] class="resume-details education" id="skills">
             <h5>PROFESSIONAL SKILLS</h5>
             <div class="row">
                 <div class="col-md-6 py-2">
                     <div class="resume-progress">
                         <p>Programming Languages & Frameworks</p>
-                        <ng-container *ngFor="let item of languages">
-                            <label for="progress-bar">{{item?.Title}} <span
-                                    class="skill-progress-value">{{item.Percentage}}</span></label>
-                            <div class="progress" style="height: 10px">
-                                <div class="progress-bar" id="progress-bar" role="progressbar"
-                                    [style.width]="item.Percentage" [attr.aria-valuenow]="item.Percentage"
-                                    aria-valuemin="0" aria-valuemax="100">
+                        @for (item of languages; track languages) {
+                        <label for="progress-bar">{{item?.Title}} <span
+                                class="skill-progress-value">{{item.Percentage}}</span></label>
+                        <div class="progress" style="height: 10px">
+                            <div class="progress-bar" id="progress-bar" role="progressbar"
+                                [style.width]="item.Percentage" [attr.aria-valuenow]="item.Percentage" aria-valuemin="0"
+                                aria-valuemax="100">
 
-                                </div>
                             </div>
-                        </ng-container>
+                        </div>
+                        }
                     </div>
                 </div>
                 <div class="col-md-6 py-2">
                     <div class="resume-progress">
                         <p>Other Skills</p>
-                        <ng-container *ngFor="let item of otherSkills">
-                            <label for="progress-bar">{{item?.Title}}<span
-                                    class="skill-progress-value">{{item.Percentage}}</span></label>
-                            <div class="progress" style="height: 10px">
-                                <div class="progress-bar" id="progress-bar" role="progressbar"
-                                    [style.width]="item.Percentage" [attr.aria-valuenow]="item.Percentage"
-                                    aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                        @for (item of otherSkills; track otherSkills) {
+                        <label for="progress-bar">{{item?.Title}}<span
+                                class="skill-progress-value">{{item.Percentage}}</span></label>
+                        <div class="progress" style="height: 10px">
+                            <div class="progress-bar" id="progress-bar" role="progressbar"
+                                [style.width]="item.Percentage" [attr.aria-valuenow]="item.Percentage" aria-valuemin="0"
+                                aria-valuemax="100">
                             </div>
-                        </ng-container>
+                        </div>
+                        }
                     </div>
                 </div>
             </div>
         </div>
-
+        }
         <!-- experience -->
-
-        <div *ngIf="activeTab === 'experience'" [@translate] class="resume-details" id="certification">
+        @if (activeTab === 'experience') {
+        <div [@translate] class="resume-details" id="certification">
             <h5>EXPERIENCE</h5>
             <div class="row">
-                <div class="col-md-6 py-2" *ngFor="let item of Experience?.fields.resumeDetails">
+                @for (item of Experience?.fields.resumeDetails; track Experience?.fields.resumeDetails) {
+                <div class="col-md-6 py-2">
                     <div class="resume-card">
                         <p>
                             {{item.Company}}
@@ -93,15 +96,17 @@
                         <p>{{item.Info}}</p>
                     </div>
                 </div>
+                }
             </div>
         </div>
-
+        }
         <!-- more -->
-
-        <div *ngIf="activeTab === 'more'" [@translate] class="resume-details" id="more">
+        @if (activeTab === 'more') {
+        <div [@translate] class="resume-details" id="more">
             <h5>MORE ABOUT ME</h5>
             <div class="row">
-                <div class="col-md-6 py-2" *ngFor="let item of certifications?.fields.resumeDetails">
+                @for (item of certifications?.fields.resumeDetails; track certifications?.fields.resumeDetails) {
+                <div class="col-md-6 py-2">
                     <div class="resume-card">
                         <p>CERTIFICATIONS</p>
                         <p>
@@ -111,6 +116,7 @@
                         <p>{{item.Date}}</p>
                     </div>
                 </div>
+                }
                 <div class="col-md-6 py-2">
                     <div class="resume-card">
                         <p>HOBBIES</p>
@@ -129,7 +135,7 @@
                 </div>
             </div>
         </div>
-
+        }
         <div class="row" id="download">
             <div class="col-12">
                 <a [href]="pdfDetails?.fields?.file?.url" class="download-resume">
