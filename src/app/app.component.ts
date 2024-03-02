@@ -55,10 +55,10 @@ export class AppComponent {
       scrollBtn.style.setProperty('--scroll', `${scrolled}%`);
       if (winScroll > 400) {
         scrollBtn.style.display = 'grid';
-        sideBar ? (sideBar.style.display = 'block') : '';
+        // sideBar ? (sideBar.style.display = 'block') : '';
       } else {
         scrollBtn.style.display = 'none';
-        sideBar ? (sideBar.style.display = 'none') : '';
+        // sideBar ? (sideBar.style.display = 'none') : '';
       }
     }
   }

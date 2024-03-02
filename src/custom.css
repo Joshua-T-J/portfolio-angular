@@ -1,8 +1,5 @@
-.container-fluid {
-  max-width: 1200px;
-}
-
-.projects-showMore {
+/*----------- Buttons---------- */
+.btn-raised {
   cursor: pointer;
   font-size: 17px;
   padding: 15px 60px;
@@ -16,15 +13,14 @@
   margin-top: 2rem;
 }
 
-.projects-showMore:hover {
+.btn-raised:focus {
+  outline: none;
+  border: none;
+}
+
+.btn-raised:hover {
   color: #fff;
   background: var(--clr-primary);
 }
 
-.prj-img-container img {
-  filter: grayscale(20%);
-}
-
-.cards-pro:hover img {
-  filter: grayscale(0%);
-}
+/*----------- Buttons---------- */

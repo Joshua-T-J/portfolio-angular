@@ -7,6 +7,7 @@ import { ResumeComponent } from './Components/resume/resume.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { ProjectDetailsComponent } from './Components/projects/project-details/project-details.component';
 import { MainPageComponent } from './Components/main-page/main-page.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'project-details/:id', component: ProjectDetailsComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'contacts', component: ContactComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
