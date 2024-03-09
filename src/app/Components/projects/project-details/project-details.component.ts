@@ -7,18 +7,14 @@ import { ProjectLoadingComponent } from '../../../Shared/Components/project-load
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-project-details',
-    templateUrl: './project-details.component.html',
-    styleUrls: ['./project-details.component.css'],
-    standalone: true,
-    imports: [
-        NgFor,
-        NgIf,
-        ProjectLoadingComponent,
-    ],
+  selector: 'app-project-details',
+  templateUrl: './project-details.component.html',
+  styleUrls: ['./project-details.component.css'],
+  standalone: true,
+  imports: [NgFor, NgIf, ProjectLoadingComponent],
 })
 export class ProjectDetailsComponent {
-  placeholderImage = '../../assets/Images/Placeholder Image.png';
+  placeholderImage = 'assets/Images/Placeholder Image.png';
   projectDetails: any;
   @ViewChild('project') project!: ElementRef;
 

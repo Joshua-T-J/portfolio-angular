@@ -35,10 +35,17 @@ section .container-fluid {
 .top {
   padding: 5px 10px 5px 20px;
   box-shadow: var(--shadow-small);
+
+  & img {
+    max-height: 60px;
+  }
 }
 
-.top img {
-  margin-top: 15px;
+@media screen and (width<992px) {
+  .top img {
+    height: 40px;
+    width: auto;
+  }
 }
 
 .nav-joshua li {
@@ -264,6 +271,10 @@ section .container-fluid {
 
 .features .card-elements {
   padding: 10px;
+}
+
+.features .cards i {
+  color: var(--clr-primary);
 }
 
 .cards i {

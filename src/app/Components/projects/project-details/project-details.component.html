@@ -1,5 +1,5 @@
 <section>
-    @for (item of projectDetails;track projectDetails ;let i = $index) {
+    @for (item of projectDetails;track projectDetails ;let i = $index,last = $last) {
     <div #project class="project-popup">
         <div class="container-fluid">
             <div class="row ">
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        @if (projectDetails.length>1 &&i!==projectDetails.length-1) {
+        @if (!last) {
         <hr>
         }
     </div>
