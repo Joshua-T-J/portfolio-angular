@@ -30,13 +30,11 @@
             </div>
             }
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-4 col-6">
-                <button [disabled]="commonService.getLoading()" (click)="toggleMore()" class="projects-showMore">
-                    Show {{showMore?'Less':'More'}} <i class="bi"
-                        [ngClass]="showMore?'bi-chevron-up':'bi-chevron-down'"></i>
-                </button>
-            </div>
+        <div class="row justify-content-center btn-row" (click)="toggleMore()">
+            <button [disabled]="commonService.getLoading()" [matTooltip]="showMore?'Less':'More'"
+                class="projects-showMore">
+                <i class="bi" [ngClass]="showMore?'bi-chevron-double-up':' bi-chevron-double-down'"></i>
+            </button>
         </div>
     </div>
 </section>

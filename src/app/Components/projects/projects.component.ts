@@ -4,19 +4,21 @@ import { CommonService } from 'src/app/Services/common.service';
 import { RouterLink } from '@angular/router';
 import { LoadingCardComponent } from '../../Shared/Components/loading-card/loading-card.component';
 import { NgFor, NgClass, SlicePipe } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'app-projects',
-    templateUrl: './projects.component.html',
-    styleUrls: ['./projects.component.css'],
-    standalone: true,
-    imports: [
-        NgFor,
-        LoadingCardComponent,
-        RouterLink,
-        NgClass,
-        SlicePipe,
-    ],
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.css'],
+  standalone: true,
+  imports: [
+    NgFor,
+    LoadingCardComponent,
+    RouterLink,
+    NgClass,
+    SlicePipe,
+    MatTooltipModule,
+  ],
 })
 export class ProjectsComponent implements OnInit {
   projects: any[] = [];
