@@ -8,7 +8,8 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { NgIf, NgFor, SlicePipe } from '@angular/common';
+import { NgIf, NgFor, SlicePipe, NgClass } from '@angular/common';
+import { SocialMediaIconsComponent } from 'src/app/Shared/Components/social-media-icons/social-media-icons.component';
 
 const fadeAnimation = [
   transition('* => *', [
@@ -29,7 +30,14 @@ const fadeAnimation = [
   styleUrls: ['./home.component.css'],
   animations: [trigger('fadeInOut', fadeAnimation)],
   standalone: true,
-  imports: [NgIf, NgFor, MatTooltipModule, SlicePipe],
+  imports: [
+    NgIf,
+    NgFor,
+    MatTooltipModule,
+    SlicePipe,
+    SocialMediaIconsComponent,
+    NgClass,
+  ],
 })
 export class HomeComponent implements OnInit {
   toRotate: string[] = [
@@ -49,16 +57,16 @@ export class HomeComponent implements OnInit {
       Title: 'Javascript',
     },
     {
-      IconSrc: 'assets/SVGs/csharp.svg',
-      Title: 'C#',
-    },
-    {
       IconSrc: 'assets/SVGs/html.svg',
       Title: 'HTML5',
     },
     {
       IconSrc: 'assets/SVGs/css.svg',
       Title: 'CSS3',
+    },
+    {
+      IconSrc: 'assets/SVGs/csharp.svg',
+      Title: 'C#',
     },
     {
       IconSrc: 'assets/SVGs/typescript.svg',

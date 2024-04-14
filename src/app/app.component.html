@@ -14,35 +14,35 @@
   <div class="social-bar flex-column justify-content-between flex-wrap" id="icon-side">
     <div (click)="toggleSideBar()" class="toggle-side" id="show-sidebar" matTooltipPosition="right"
       [matTooltip]="sideBarOpen?'Collapse':'Expand'">
-      <i class="fa-solid" [ngClass]="sideBarOpen?'fa-angle-left':'fa-angle-right'"></i>
+      <i class="bi" [ngClass]="sideBarOpen?'bi-chevron-left':'bi-chevron-right'"></i>
     </div>
     @if (sideBarOpen) {
     <div class="side-icons-container">
-      <div class="theme-switch-wrapper side-bar-icon">
-        <label class="theme-switch" for="checkbox">
+      <div class="theme-switch-wrapper ">
+        <label class="theme-switch side-bar-icon" for="checkbox">
           <input type="checkbox" (change)="toggleTheme()" [formControl]="themeSwitch" id="checkbox" />
-          <i class="fa-solid fa-moon" matTooltipPosition="right" matTooltip="Dark Mode" id="moon"></i>
-          <i class="fa-solid fa-sun" matTooltipPosition="right" matTooltip="Light Mode" id="sun"></i>
+          <i class="bi bi-moon-fill" matTooltipPosition="right" matTooltip="Dark Mode" id="moon"></i>
+          <i class="bi bi-brightness-high" matTooltipPosition="right" matTooltip="Light Mode" id="sun"></i>
         </label>
       </div>
       <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/" matTooltipPosition="right" matTooltip="LinkedIn">
         <div class="side-bar-icon">
-          <i class="fa-brands fa-linkedin-in"></i>
+          <i class="bi bi-linkedin"></i>
         </div>
       </a>
       <a href="https://github.com/Joshua-T-J" matTooltipPosition="right" matTooltip="GitHub">
         <div class="side-bar-icon">
-          <i class="fa-brands fa-github"></i>
+          <i class="bi bi-github"></i>
         </div>
       </a>
       <a href="https://www.instagram.com/joshua.t_j/" matTooltipPosition="right" matTooltip="Instagram">
         <div class="side-bar-icon">
-          <i class="fa-brands fa-instagram"></i>
+          <i class="bi bi-instagram"></i>
         </div>
       </a>
       <a href="mailto:joshuajose312@gmail.com" matTooltipPosition="right" matTooltip="E-mail">
         <div class="side-bar-icon">
-          <i class="fa-solid fa-envelope"></i>
+          <i class="bi bi-envelope"></i>
         </div>
       </a>
     </div>
@@ -53,5 +53,5 @@
 <!-- goto top arrow button -->
 
 <div class="up-arrow" id="goto-top" (click)="scrollToTop()" matTooltip="Go to Top">
-  <a id="progress-value"><i class="fas fa-arrow-up"></i> </a>
+  <a id="progress-value"><i class="bi bi-arrow-up"></i> </a>
 </div>

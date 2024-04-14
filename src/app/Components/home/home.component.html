@@ -22,15 +22,8 @@
                     organization. Eager to learn new technologies and methodologies.
                 </p>
                 <div class="home-bottom d-flex flex-row justify-content-between flex-wrap">
-                    <div class="home-icon icon1">
-                        <div class="icons social">
-                            <p>FIND WITH ME</p>
-                            <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/"><i
-                                    class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/Joshua-T-J"><i class="fab fa-github"></i></a>
-                            <a href="https://www.instagram.com/joshua.t_j/"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                    <!-- Icons Component  -->
+                    <app-social-media-icons></app-social-media-icons>
                     <div class="home-icon icon2 d-flex flex-row justify-content-between flex-wrap">
                         <div class="icons">
                             <p>BEST SKILL ON</p>
@@ -43,7 +36,8 @@
                                 </span>
                                 }
                                 <i [matTooltip]="showMore?'Show less':'Show more'" matTooltipPosition="right"
-                                    class="fa-solid fa-plus more-icon" (click)="toggleMore()"></i>
+                                    class="bi more-icon" [ngClass]="showMore?'bi-dash':'bi-plus'"
+                                    (click)="toggleMore()"></i>
                             </div>
                         </div>
                     </div>

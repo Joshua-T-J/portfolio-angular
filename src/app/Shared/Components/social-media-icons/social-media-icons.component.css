@@ -1,0 +1,36 @@
+.icons-title {
+  /* color: var(--font-color); */
+  color: #7f8181;
+  padding-bottom: 25px;
+}
+
+.icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.home-icon .icons .icon-link {
+  padding: 20px 22px;
+  font-size: large;
+  color: var(--font-color);
+  border-radius: 5px;
+  margin-right: 15px;
+  background: var(--background-color);
+  box-shadow: var(--shadow);
+}
+
+.home-icon .icons .icon-link i {
+  transition: all 0.3s;
+}
+
+.home-icon .icons .icon-link:hover {
+  background: linear-gradient(145deg, var(--clr-primary), #da0c0c);
+  color: #fff;
+  cursor: pointer;
+}
+
+.icons {
+  font-size: 20px;
+}

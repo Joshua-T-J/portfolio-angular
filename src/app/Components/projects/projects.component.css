@@ -1,5 +1,5 @@
 .container-fluid {
-  max-width: 1200px;
+  max-width: 1500px;
 }
 
 .projects-showMore {
@@ -28,6 +28,12 @@
 
 .cards-pro:hover img {
   filter: grayscale(0%);
+}
+
+@media screen and (width> 1380px) {
+  .cards-pro img {
+    min-width: 350px;
+  }
 }
 
 @-webkit-keyframes bounce-top {

@@ -1,0 +1,13 @@
+#contact-form input,
+#form_message {
+  border-radius: 5px;
+  background: var(--bg-body);
+  box-shadow: var(--shadow-inwards);
+  padding-block: 12px;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+
+  &:focus {
+    border-color: var(--clr-primary);
+  }
+}
