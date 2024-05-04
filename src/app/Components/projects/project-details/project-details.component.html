@@ -1,7 +1,14 @@
 <section>
-    @for (item of projectDetails;track projectDetails ;let i = $index,last = $last) {
+    @for (item of projectDetails;track projectDetails ;let i = $index,last = $last,first =$first) {
     <div #project class="project-popup">
         <div class="container-fluid">
+            @if(first){
+            <div class="row">
+                <div class="project-details-title">
+                    <h4>{{item?.fields.projectTypeName}}s</h4>
+                </div>
+            </div>
+            }
             <div class="row ">
                 <div class="col-lg-5 col-md-6">
                     <div class="image-div text-center">
@@ -22,7 +29,9 @@
 
                     <div class="view-prj-btn">
                         <a [href]="item?.fields?.projectUrl" target="_blank">
-                            View Project &nbsp;<i class="fa-solid fa-angle-right"></i>
+                            View Project &nbsp;<span class="material-symbols-outlined">
+                                open_in_new
+                            </span>
                         </a>
                         <!-- <button class="close-btn" routerLink="" fragment="projects">
                             Go Back &nbsp;<i class="fa-solid fa-arrow-left"></i>

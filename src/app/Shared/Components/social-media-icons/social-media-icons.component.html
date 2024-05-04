@@ -2,10 +2,10 @@
     <div class="icons social">
         <p class="icons-title">FIND WITH ME</p>
         <div class="icons-container">
-            <a class="icon-link" href="https://www.linkedin.com/in/joshua-t-j-68121b22a/"><i
-                    class="bi bi-linkedin"></i></a>
-            <a class="icon-link" href="https://github.com/Joshua-T-J"><i class=" bi bi-github"></i></a>
-            <a class="icon-link" href="https://www.instagram.com/joshua.t_j/"><i class="bi bi-instagram"></i></a>
+            @for (item of socialIcons; track item) {
+            <a class="icon-link" [href]="item.link" [matTooltip]="item.name"><i class="bi"
+                    [ngClass]="item.icon"></i></a>
+            }
         </div>
     </div>
 </div>
