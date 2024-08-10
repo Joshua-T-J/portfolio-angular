@@ -12,8 +12,7 @@
 
 <div class="side-bar" id="side-bar">
   <div class="social-bar flex-column justify-content-between flex-wrap" id="icon-side">
-    <div (click)="toggleSideBar()" class="toggle-side" id="show-sidebar" matTooltipPosition="right"
-      [matTooltip]="sideBarOpen?'Collapse':'Expand'">
+    <div (click)="toggleSideBar()" class="toggle-side" id="show-sidebar" [title]="sideBarOpen?'Collapse':'Expand'">
       <i class="bi" [ngClass]="sideBarOpen?'bi-chevron-left':'bi-chevron-right'"></i>
     </div>
     @if (sideBarOpen) {
@@ -21,26 +20,26 @@
       <div class="theme-switch-wrapper ">
         <label class="theme-switch side-bar-icon" for="checkbox">
           <input type="checkbox" (change)="toggleTheme()" [formControl]="themeSwitch" id="checkbox" />
-          <i class="bi bi-moon-fill" matTooltipPosition="right" matTooltip="Dark Mode" id="moon"></i>
-          <i class="bi bi-brightness-high" matTooltipPosition="right" matTooltip="Light Mode" id="sun"></i>
+          <i class="bi bi-moon-fill" title="Dark Mode" id="moon"></i>
+          <i class="bi bi-brightness-high" title="Light Mode" id="sun"></i>
         </label>
       </div>
-      <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/" matTooltipPosition="right" matTooltip="LinkedIn">
+      <a href="https://www.linkedin.com/in/joshua-t-j-68121b22a/" title="LinkedIn">
         <div class="side-bar-icon">
           <i class="bi bi-linkedin"></i>
         </div>
       </a>
-      <a href="https://github.com/Joshua-T-J" matTooltipPosition="right" matTooltip="GitHub">
+      <a href="https://github.com/Joshua-T-J" title="GitHub">
         <div class="side-bar-icon">
           <i class="bi bi-github"></i>
         </div>
       </a>
-      <a href="https://www.instagram.com/joshua.t_j/" matTooltipPosition="right" matTooltip="Instagram">
+      <a href="https://www.instagram.com/joshua.t_j/" title="Instagram">
         <div class="side-bar-icon">
           <i class="bi bi-instagram"></i>
         </div>
       </a>
-      <a href="mailto:joshuajose312@gmail.com" matTooltipPosition="right" matTooltip="E-mail">
+      <a href="mailto:joshuajose312@gmail.com" title="E-mail">
         <div class="side-bar-icon">
           <i class="bi bi-envelope"></i>
         </div>

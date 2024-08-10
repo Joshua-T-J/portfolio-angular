@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-body);
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
 }
@@ -465,17 +470,20 @@ section .container-fluid {
   margin: 10px 0;
 }
 
-#contact-form .btn {
+#contact-form .btn-send {
   color: var(--clr-primary);
   background: var(--bg-body);
   box-shadow: var(--shadow);
 }
 
-#contact-form .btn:hover {
+#contact-form .btn-send:hover {
   color: #e2e8ec;
   background-color: var(--clr-primary);
 }
 
+#contact-form .btn-send:hover circle {
+  stroke: #e2e8ec;
+}
 .address {
   background: var(--background-color);
   box-shadow: var(--shadow);
@@ -525,7 +533,6 @@ section .container-fluid {
 #contact-form .error-span {
   color: var(--clr-error);
   font-size: 13px;
-  text-transform: capitalize;
 }
 
 .error-span i {
@@ -987,3 +994,45 @@ hr {
   margin-block: 30px;
   width: 100%;
 }
+
+/***************** Mat Style over ride ***************************/
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: var(--bg-body) !important;
+}
+
+.mat-icon {
+  color: var(--clr-primary);
+}
+
+.cdk-overlay-pane {
+  margin-top: 110px !important;
+}
+
+/* .features .container-fluid .row {
+  -webkit-animation: translateAnimation 1ms forwards;
+  animation: translateAnimation 1ms forwards;
+  animation-timeline: scroll();
+}
+
+@keyframes translateAnimation {
+  0% {
+    transform: translateX(30%);
+    animation-timing-function: ease-in;
+  }
+  20% {
+    transform: translateX(0%);
+    animation-timing-function: ease-out;
+  }
+  70% {
+    transform: translateX(-50%);
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    transform: translateX(-50%);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(-100%);
+    animation-timing-function: ease-out;
+  }
+} */

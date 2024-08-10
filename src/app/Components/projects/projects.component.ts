@@ -3,7 +3,7 @@ import { ContentfulService } from '../../Services/contentful.service';
 import { CommonService } from 'src/app/Services/common.service';
 import { RouterLink } from '@angular/router';
 import { LoadingCardComponent } from '../../Shared/Components/loading-card/loading-card.component';
-import { NgFor, NgClass, SlicePipe } from '@angular/common';
+import { NgFor, NgClass, SlicePipe, NgOptimizedImage } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
@@ -18,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     NgClass,
     SlicePipe,
     MatTooltipModule,
+    NgOptimizedImage,
   ],
 })
 export class ProjectsComponent implements OnInit {

@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+}
+.example-toast {
+  color: var(--clr-primary);
+  vertical-align: middle;
+  text-align: center;
+}

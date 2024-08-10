@@ -24,23 +24,35 @@
             <div class="col-lg-8 col-md-7">
                 <div class="card p-4" id="contact-div">
                     <div class="card-body">
-                        <form id="contact-form">
+                        <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="contactFormSubmit()">
                             <div class="controls">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form-name">Name :</label>
-                                            <input id="form_name" type="text" name="Name" class="form-control"
-                                                placeholder="Please enter your name *" required="required" />
-                                            <span class="error-span" id="name-error"></span>
+                                            <input id="form_name" type="text" formControlName="Name" name="Name"
+                                                class="form-control" placeholder="Please enter your name *"
+                                                required="required" />
+                                            <!-- @if(contactForm.get('Name')?.invalid &&
+                                            contactForm.get('Name')?.touched){ -->
+                                            <span class="error-span" [ngClass]="(contactForm.get('Name')?.invalid&&
+                                            contactForm.get('Name')?.touched) ? 'visible':'invisible'"
+                                                id="name-error">Enter your name</span>
+                                            <!-- } -->
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form_mobile">Phone No :</label>
-                                            <input id="form_mobile" type="tel" name="Mobile" class="form-control"
-                                                placeholder="+91 888 888 8888 *" required="required" />
-                                            <span class="error-span" id="mobile-error"></span>
+                                            <input id="form_mobile" type="tel" formControlName="Phone" name="Mobile"
+                                                class="form-control" placeholder="+91 888 888 8888 *" />
+                                            <!-- @if(contactForm.get('Phone')?.invalid &&
+                                            contactForm.get('Phone')?.touched){ -->
+                                            <span class="error-span" [ngClass]="(contactForm.get('Phone')?.invalid&&
+                                            contactForm.get('Phone')?.touched) ? 'visible':'invisible'"
+                                                id="mobile-error">Enter a valid phone number
+                                            </span>
+                                            <!-- } -->
                                         </div>
                                     </div>
                                 </div>
@@ -48,18 +60,29 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form-email">E-mail :</label>
-                                            <input id="form_email" type="email" name="Email" class="form-control"
-                                                placeholder="you@example.com *" required="required"
-                                                data-error="Valid email is required." />
-                                            <span class="error-span" id="email-error"></span>
+                                            <input id="form_email" type="email" formControlName="Email" name="Email"
+                                                class="form-control" placeholder="you@example.com *"
+                                                required="required" />
+                                            <!-- @if(contactForm.get('Email')?.invalid&&
+                                            contactForm.get('Email')?.touched){ -->
+                                            <span class="error-span" [ngClass]="(contactForm.get('Email')?.invalid&&
+                                            contactForm.get('Email')?.touched) ? 'visible':'invisible'"
+                                                id="email-error">Enter a valid e-mail</span>
+                                            <!-- } -->
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="form-subject">Subject :</label>
-                                            <input id="form_subject" type="text" name="Subject" class="form-control"
+                                            <input id="form_subject" type="text" formControlName="Subject"
+                                                name="Subject" class="form-control"
                                                 placeholder="Please specify the subject *" required="required" />
-                                            <span class="error-span" id="subject-error"></span>
+                                            <!-- @if(contactForm.get('Subject')?.invalid&&
+                                            contactForm.get('Subject')?.touched){ -->
+                                            <span class="error-span" [ngClass]="(contactForm.get('Subject')?.invalid&&
+                                            contactForm.get('Subject')?.touched) ? 'visible':'invisible'"
+                                                id="subject-error">Forgot to put a subject</span>
+                                            <!-- } -->
                                         </div>
                                     </div>
                                 </div>
@@ -67,16 +90,24 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="form_message">Message :</label>
-                                            <textarea id="form_message" name="Message" class="form-control"
-                                                placeholder="Write your message here *" rows="4"
-                                                required="required"></textarea>
-                                            <span class="error-span" id="message-error"></span>
+                                            <textarea id="form_message" formControlName="Message" name="Message"
+                                                class="form-control" placeholder="Write your message here *"
+                                                rows="4"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="margin-top: 10px">
-                                        <button type="submit" class="btn btn-send pt-2 btn-block" id="submit-btn">
+                                        <button type="submit" [disabled]="contactForm.invalid || submitted()"
+                                            class="btn pt-2 btn-block"
+                                            [ngClass]="contactForm.valid ||!submitted()?'btn-send':'btn-disabled'"
+                                            id="submit-btn">
                                             Send Message &nbsp;
+                                            @if (submitted()) {
+                                            <svg viewBox="25 25 50 50">
+                                                <circle r="20" cy="50" cx="50"></circle>
+                                            </svg>
+                                            }@else {
                                             <i class="bi bi-send"></i>
+                                            }
                                         </button>
                                         <span class="error-span text-center" id="submit-error"></span>
                                     </div>

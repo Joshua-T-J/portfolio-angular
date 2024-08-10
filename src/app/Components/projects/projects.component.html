@@ -15,7 +15,7 @@
             <div class="col-lg-4 col-md-6 card-main">
                 <div [routerLink]="['project-details',item.fields.projectId]" class="cards-pro dic-card">
                     <div class="prj-img-container">
-                        <img [src]="item.fields.image.fields.file.url" alt="" />
+                        <img [ngSrc]="item.fields.image.fields.file.url" height="300" width="300" alt="" />
                     </div>
                     <p class="prj-name">{{item.fields.projectType}}</p>
                     <h5 class="card-elements projects-h5">

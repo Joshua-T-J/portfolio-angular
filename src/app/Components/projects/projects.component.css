@@ -24,6 +24,8 @@
 
 .prj-img-container img {
   filter: grayscale(40%);
+  height: auto;
+  width: auto;
 }
 
 .cards-pro:hover img {
