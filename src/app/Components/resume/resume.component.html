@@ -7,14 +7,20 @@
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="resume-nav">
                         <ul #resumeButtons class="navbar-nav resume-nav">
-                            <li (click)="click($event,'education')" class="nav-item resume-li edu active col-md-3">
+                            <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'education'):''"
+                                (click)="click($event,'education')" class="nav-item resume-li edu active col-md-3">
                                 EDUCATION
                             </li>
-                            <li (click)="click($event,'skills')" class="nav-item resume-li ski col-md-3">SKILLS</li>
-                            <li (click)="click($event,'experience')" class="nav-item resume-li cer col-md-3">
+                            <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'skills'):''"
+                                (click)="click($event,'skills')" class="nav-item resume-li ski col-md-3">
+                                SKILLS</li>
+                            <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'experience'):''"
+                                (click)="click($event,'experience')" class="nav-item resume-li cer col-md-3">
                                 EXPERIENCE
                             </li>
-                            <li (click)="click($event,'more')" class="nav-item resume-li more col-md-3">MORE</li>
+                            <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'more'):''"
+                                (click)="click($event,'more')" class="nav-item resume-li more col-md-3">
+                                MORE</li>
                         </ul>
                     </div>
                 </nav>
@@ -93,7 +99,17 @@
                         </p>
                         <p>{{item.Designation}} ( {{item.Year}} )</p>
                         <hr>
-                        <p>{{item.Info}}</p>
+                        <p>{{getTruncatedInfo(item.Info,item.Company)}}
+                            @if (isExpanded[item.Company]) {
+                            {{getRemainingInfo(item.Info)}}
+                            }
+                            @if (showReadMore) {
+                            <span tabindex="0" (keydown)="$event.key==='Enter'?toggleContent(item.Company):''"
+                                class="read-more" (click)="toggleContent(item.Company)">
+                                {{ isExpanded[item.Company] ? 'Read Less' : 'Read More' }}
+                            </span>
+                            }
+                        </p>
                     </div>
                 </div>
                 }

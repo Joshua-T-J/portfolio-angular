@@ -1,7 +1,7 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ContentfulService } from '../../Services/contentful.service';
-import { NgIf, NgFor } from '@angular/common';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 
 const translateAnimation = [
   transition('void => *', [
@@ -21,12 +21,12 @@ const translateAnimation = [
 ];
 
 @Component({
-    selector: 'app-resume',
-    templateUrl: './resume.component.html',
-    styleUrls: ['./resume.component.css'],
-    animations: [trigger('translate', translateAnimation)],
-    standalone: true,
-    imports: [NgIf, NgFor],
+  selector: 'app-resume',
+  templateUrl: './resume.component.html',
+  styleUrls: ['./resume.component.css'],
+  animations: [trigger('translate', translateAnimation)],
+  standalone: true,
+  imports: [NgIf, NgFor, NgClass],
 })
 export class ResumeComponent implements OnInit {
   @ViewChild('resumeButtons') resumeButtons!: ElementRef;
@@ -39,6 +39,11 @@ export class ResumeComponent implements OnInit {
   certifications: any;
   Experience: any;
   pdfDetails: any;
+  truncatedContent!: string;
+  remainingContent!: string;
+  contentLimit: number = 25;
+  isExpanded: { [key: string]: boolean } = {};
+  showReadMore: boolean = false;
 
   constructor(private contentfulService: ContentfulService) {}
 
@@ -95,5 +100,25 @@ export class ResumeComponent implements OnInit {
         return item.SkillType == 'Other Skill';
       }
     );
+  }
+
+  getTruncatedInfo(info: string, company: string): string {
+    const words = info.split(' ');
+    this.showReadMore = words.length > this.contentLimit;
+    return words.length > this.contentLimit
+      ? words.slice(0, this.contentLimit).join(' ') +
+          (this.isExpanded[company] ? '' : '...')
+      : info;
+  }
+
+  getRemainingInfo(info: string): string {
+    const words = info.split(' ');
+    return words.length > this.contentLimit
+      ? words.slice(this.contentLimit).join(' ')
+      : '';
+  }
+
+  toggleContent(company: string) {
+    this.isExpanded[company] = !this.isExpanded[company];
   }
 }

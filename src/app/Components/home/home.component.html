@@ -31,11 +31,12 @@
                                 @for (item of (showMore ? skillsIcons : (skillsIcons | slice:0:4)); track
                                 skillsIcons;let i= $index) {
                                 <span [@fadeInOut]="{value: stateName, params: {delay: i * 100}}"
-                                    [matTooltip]="item.Title">
+                                    [matTooltip]="item.Title" matTooltipPosition="above">
                                     <img [src]="item.IconSrc" [alt]="item.Title">
                                 </span>
                                 }
-                                <i [matTooltip]="showMore?'Show less':'Show more'" matTooltipPosition="right"
+                                <i tabindex="0" (keydown)="$event.key==='Enter'?toggleMore():''"
+                                    [matTooltip]="showMore?'Show less':'Show more'" matTooltipPosition="above"
                                     class="bi more-icon" [ngClass]="showMore?'bi-dash':'bi-plus'"
                                     (click)="toggleMore()"></i>
                             </div>

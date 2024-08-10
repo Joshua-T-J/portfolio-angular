@@ -3,7 +3,7 @@
         <p class="icons-title">FIND WITH ME</p>
         <div class="icons-container">
             @for (item of socialIcons; track item) {
-            <a class="icon-link" [href]="item.link" [matTooltip]="item.name"><i class="bi"
+            <a class="icon-link" [href]="item.link" [matTooltip]="item.name" matTooltipPosition="above"><i class="bi"
                     [ngClass]="item.icon"></i></a>
             }
         </div>
