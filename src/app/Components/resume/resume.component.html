@@ -7,17 +7,17 @@
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="resume-nav">
                         <ul #resumeButtons class="navbar-nav resume-nav">
+                            <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'experience'):''"
+                                (click)="click($event,'experience')" class="nav-item resume-li active cer col-md-3">
+                                EXPERIENCE
+                            </li>
                             <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'education'):''"
-                                (click)="click($event,'education')" class="nav-item resume-li edu active col-md-3">
+                                (click)="click($event,'education')" class="nav-item resume-li edu col-md-3">
                                 EDUCATION
                             </li>
                             <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'skills'):''"
                                 (click)="click($event,'skills')" class="nav-item resume-li ski col-md-3">
                                 SKILLS</li>
-                            <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'experience'):''"
-                                (click)="click($event,'experience')" class="nav-item resume-li cer col-md-3">
-                                EXPERIENCE
-                            </li>
                             <li tabindex="0" (keydown)="$event.key==='Enter'?click($event,'more'):''"
                                 (click)="click($event,'more')" class="nav-item resume-li more col-md-3">
                                 MORE</li>

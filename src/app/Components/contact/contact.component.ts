@@ -1,5 +1,4 @@
 import { NgClass } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, signal } from '@angular/core';
 import {
   ReactiveFormsModule,
@@ -8,7 +7,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { MAT_SNACK_BAR_DATA, MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonService } from 'src/app/Services/common.service';
 import {
   AlertComponent,
@@ -28,7 +27,6 @@ import { SocialMediaIconsComponent } from 'src/app/Shared/Components/social-medi
     NgClass,
     AlertComponent,
   ],
-  providers: [{ provide: MAT_SNACK_BAR_DATA, useValue: {} }],
 })
 export class ContactComponent implements OnInit {
   submitted = signal<boolean>(false);
@@ -40,8 +38,7 @@ export class ContactComponent implements OnInit {
   constructor(
     private service: CommonService,
     private fb: FormBuilder,
-    private _snackBar: MatSnackBar,
-    private http: HttpClient
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {

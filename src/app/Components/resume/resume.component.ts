@@ -30,7 +30,7 @@ const translateAnimation = [
 })
 export class ResumeComponent implements OnInit {
   @ViewChild('resumeButtons') resumeButtons!: ElementRef;
-  activeTab = 'education';
+  activeTab = 'experience';
   resume: any[] = [];
   skills: any;
   education: any;
