@@ -59,10 +59,6 @@ export class ContactComponent implements OnInit {
       Subject: ['', [Validators.required]],
       Message: [''],
     });
-    this.openSnackBar(
-      "Thanks for the message! I'll get back to you soon!",
-      this.alertTypes.SUCCESS
-    );
   }
 
   openSnackBar(message: string, type: AlertTypes) {
