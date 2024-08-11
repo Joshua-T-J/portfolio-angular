@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, signal, Type } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import {
   ReactiveFormsModule,
   FormsModule,

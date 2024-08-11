@@ -1,11 +1,10 @@
-import { trigger, transition, style, animate } from '@angular/animations';
 import { DOCUMENT, NgClass, NgIf } from '@angular/common';
 import { Component, HostListener, Inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderComponent } from './Components/header/header.component';
-import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
