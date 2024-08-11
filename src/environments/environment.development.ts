@@ -7,4 +7,6 @@ export const environment = {
     resume: 'resumeDetails',
     projectTypes: 'projectTypes',
   },
+  GoogleSheetsAPI:
+    'https://script.google.com/macros/s/AKfycbw6FOum0_DXf6xWuoVQi96o1-fbEIo0VMJOwvuJ1uCSs0DIKhDXJwW0NtnJX69zXlRK/exec',
 };

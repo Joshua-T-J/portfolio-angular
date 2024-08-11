@@ -998,6 +998,7 @@ hr {
 /***************** Mat Style over ride ***************************/
 .mat-mdc-snack-bar-container .mdc-snackbar__surface {
   background-color: var(--bg-body) !important;
+  border: 1px solid var(--clr-primary);
 }
 
 .mat-icon {

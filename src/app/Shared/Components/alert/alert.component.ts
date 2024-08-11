@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject, input } from '@angular/core';
 import {
+  MAT_SNACK_BAR_DATA,
   MatSnackBarAction,
   MatSnackBarActions,
   MatSnackBarLabel,
@@ -22,5 +23,18 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './alert.component.css',
 })
 export class AlertComponent {
+  alertTypes = AlertTypes;
   snackBarRef = inject(MatSnackBarRef);
+
+  constructor(@Inject(MAT_SNACK_BAR_DATA) public data: SnackbarData) {}
 }
+
+export enum AlertTypes {
+  SUCCESS,
+  ERROR,
+}
+
+export type SnackbarData = {
+  Type: AlertTypes;
+  Message: string;
+};

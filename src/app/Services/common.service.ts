@@ -7,9 +7,10 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root',
 })
 export class CommonService {
-  _proxyUrl = environment.PROXY_URL;
+  // _proxyUrl = environment.PROXY_URL;
 
   loading: boolean = false;
+  formsApiUrl: string = environment.GoogleSheetsAPI;
 
   constructor(private http: HttpClient) {}
 
@@ -21,6 +22,9 @@ export class CommonService {
     return this.loading;
   }
 
+  submitForm(formData: FormData): Observable<any> {
+    return this.http.post(this.formsApiUrl, formData);
+  }
   // getProxy() {
   //   return this.http.get(
   //     `${environment.PROXY_URL}api/contentful/project-types`
