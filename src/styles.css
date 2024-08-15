@@ -1071,3 +1071,7 @@ hr {
   margin-top: -50px;
   margin-left: -10px;
 }
+
+main section .container-fluid {
+  overflow: hidden;
+}

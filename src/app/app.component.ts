@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -66,6 +67,7 @@ export class AppComponent {
     this.route.fragment.subscribe({
       next: (fragment) => this.scrollToSection(fragment),
     });
+    AOS.init();
   }
 
   scrollToSection(section: any) {

@@ -23,10 +23,11 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/variables.css",
-              "src/custom.css"
+              "src/custom.css",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["contentful"]
+            "allowedCommonJsDependencies": ["contentful", "aos"]
           },
           "configurations": {
             "production": {
