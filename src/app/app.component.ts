@@ -64,19 +64,19 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.route.fragment.subscribe({
-      next: (fragment) => this.scrollToSection(fragment),
-    });
+    // this.route.fragment.subscribe({
+    //   next: (fragment) => this.scrollToSection(fragment),
+    // });
     AOS.init();
   }
 
-  scrollToSection(section: any) {
-    document.getElementById(section)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
-  }
+  // scrollToSection(section: any) {
+  //   document.getElementById(section)?.scrollIntoView({
+  //     behavior: 'smooth',
+  //     block: 'start',
+  //     inline: 'nearest',
+  //   });
+  // }
 
   scrollToTop() {
     window.scrollTo(0, 0);
