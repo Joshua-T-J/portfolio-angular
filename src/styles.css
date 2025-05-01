@@ -405,6 +405,13 @@ section .container-fluid {
   color: var(--font-color) !important;
 }
 
+.resume-card p a {
+  color: var(--clr-primary) !important;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .resume-card p:nth-child(1),
 .resume-progress p:first-child {
   padding-bottom: 10px;
