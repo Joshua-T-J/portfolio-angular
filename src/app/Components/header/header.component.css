@@ -1,6 +1,0 @@
-header {
-  background-color: var(--bg-body-800);
-  box-shadow: var(--shadow-small);
-  position: fixed;
-  backdrop-filter: blur(15px);
-}
