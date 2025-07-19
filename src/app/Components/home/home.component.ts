@@ -6,10 +6,11 @@ import {
   query,
   stagger,
 } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgIf, NgFor, SlicePipe, NgClass } from '@angular/common';
 import { SocialMediaIconsComponent } from 'src/app/Shared/Components/social-media-icons/social-media-icons.component';
+import { ContentfulService } from 'src/app/Services/contentful.service';
 
 const fadeAnimation = [
   transition('* => *', [
@@ -30,14 +31,7 @@ const fadeAnimation = [
   styleUrls: ['./home.component.css'],
   animations: [trigger('fadeInOut', fadeAnimation)],
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    MatTooltipModule,
-    SlicePipe,
-    SocialMediaIconsComponent,
-    NgClass,
-  ],
+  imports: [MatTooltipModule, SlicePipe, SocialMediaIconsComponent, NgClass],
 })
 export class HomeComponent implements OnInit {
   toRotate: string[] = [
@@ -83,9 +77,13 @@ export class HomeComponent implements OnInit {
   isDeleting: boolean = false;
   loopNum: number = 0;
   showMore: boolean = false;
+  resume: any[] = [];
+  About: IAbout | undefined;
+
+  private contentfulService: ContentfulService = inject(ContentfulService);
 
   ngOnInit(): void {
-    this.tick();
+    this.getResumeDetails();
   }
 
   tick(): void {
@@ -121,9 +119,32 @@ export class HomeComponent implements OnInit {
   toggleMore() {
     this.showMore = !this.showMore;
   }
+
+  getResumeDetails() {
+    this.contentfulService.getResume().subscribe({
+      next: (res) => {
+        this.resume = res;
+        this.filterByDetailType();
+        this.tick();
+      },
+    });
+  }
+
+  filterByDetailType() {
+    this.About = this.resume.find((item) => item.fields.type === 'About')
+      ?.fields?.resumeDetails as IAbout;
+    if (this.About && this.About?.Quotes) {
+      this.toRotate = this.About?.Quotes;
+    }
+  }
 }
 
 interface ISkillsIcons {
   IconSrc: string;
   Title: string;
+}
+
+interface IAbout {
+  About?: string | undefined;
+  Quotes?: string[];
 }
