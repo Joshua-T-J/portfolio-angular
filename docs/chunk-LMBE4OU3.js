@@ -1,0 +1,1 @@
+import{Fb as t,Gb as o,Ub as i,eb as n}from"./chunk-TTGBP2JC.js";var d=class a{static \u0275fac=function(e){return new(e||a)};static \u0275cmp=n({type:a,selectors:[["app-loading-card"]],decls:2,vars:0,template:function(e,s){e&1&&(t(0,"p"),i(1,"loading-card works!"),o())},encapsulation:2})};export{d as a};
